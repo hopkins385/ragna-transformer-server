@@ -1,8 +1,8 @@
 services:
   api:
     build: .
-    volumes:
-      - ./cache:/app/cache
+    # volumes:
+    #   - ./cache:/app/cache
     ports:
       - 3200:8000
-    restart: unless-stopped
+    restart: no

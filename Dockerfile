@@ -19,10 +19,10 @@ RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH"
 
 # Copy the application into the container.
-COPY . /app
+COPY . /server
 
 # Install the application dependencies.
-WORKDIR /app
+WORKDIR /server
 RUN uv sync --frozen --no-cache
 
 EXPOSE 8000
