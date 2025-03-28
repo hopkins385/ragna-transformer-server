@@ -4,5 +4,5 @@ services:
     # volumes:
     #   - ./cache:/app/cache
     ports:
-      - 3200:8000
+      - 3200:3030
     restart: no

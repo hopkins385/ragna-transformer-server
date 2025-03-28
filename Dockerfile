@@ -25,6 +25,6 @@ COPY . /server
 WORKDIR /server
 RUN uv sync --frozen --no-cache
 
-EXPOSE 8000
+EXPOSE 3030
 
 CMD ["uv", "run", "app/main.py"]
