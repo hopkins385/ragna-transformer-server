@@ -1,9 +1,8 @@
 services:
   api:
     build: .
+    volumes:
+      - ./cache:/app/cache
     ports:
-      - "8000:8000"
-    environment:
-      - PORT=8000
-      - HOST=0.0.0.0
+      - 3200:8000
     restart: unless-stopped
