@@ -5,6 +5,8 @@ import os
 import logging
 import sys
 
+from utils.hide import hide_emails
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -30,7 +32,6 @@ except Exception as e:
     print(f"Error loading model: {str(e)}")
     raise RuntimeError(f"Failed to load NER model: {str(e)}")
 
-# function that iterates over the entities and replaces them with *** in the text
 def mask_entities(text: str, entities):
     for entity in entities:
         text = text.replace(entity["text"], "<" + entity["label"] + ">")
@@ -39,12 +40,16 @@ def mask_entities(text: str, entities):
 @router.post("/ner/extract")
 async def ner(body: NerRequestBody):
     try:
-        default_labels = ["person", "birthdate", "phone", "iban", "email", "name", "date", "address", "organization", "medical_term"]
+        default_labels = ["person", "birthdate", "phonenumber", "iban", "address", "organization", "location"]
 
         if body.labels is None:
             labels = default_labels
         else:
             labels = body.labels
+
+        # Pre-process text
+        # Hide sensitive information
+        body.text = hide_emails(body.text)
 
         try:
             entities = model.predict_entities(text=body.text, labels=labels)
@@ -58,11 +63,6 @@ async def ner(body: NerRequestBody):
             # Only include entities with confidence score > 0.7
             if entity["score"] < 0.7:
                 continue
-
-            # # Additional validation for IBANs
-            # if entity["label"] == "iban":
-            #     if not is_valid_iban(entity["text"]):
-            #         continue
 
             filtered_entities.append(entity)
 
