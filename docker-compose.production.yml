@@ -6,5 +6,5 @@ services:
 
 networks:
   ext_net:
-    name: ragna_network
+    name: ragna-studio-backend-network
     external: true

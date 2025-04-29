@@ -1,10 +1,7 @@
+name: ragna_transformer
 services:
   api:
     restart: on-failure
     image: ghcr.io/hopkins385/ragna-transformer-server:latest
     security_opt:
       - no-new-privileges:true
-    # volumes:
-    #   - ./cache:/app/cache
-    # ports:
-    #   - 3200:3030
