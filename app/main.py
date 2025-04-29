@@ -27,7 +27,7 @@ if __name__ == "__main__":
     import uvicorn
     try:
         logger.info("Starting server...")
-        uvicorn.run(app, host="127.0.0.1", port=3030)
+        uvicorn.run(app, host="0.0.0.0", port=3030)
     except Exception as e:
         logger.error(f"Failed to start server: {str(e)}", exc_info=True)
         raise RuntimeError(f"Server startup failed: {str(e)}")
