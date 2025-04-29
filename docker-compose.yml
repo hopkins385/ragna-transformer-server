@@ -1,8 +1,10 @@
 services:
   api:
-    build: .
+    restart: on-failure
+    image: ghcr.io/hopkins385/ragna-transformer-server:latest
+    security_opt:
+      - no-new-privileges:true
     # volumes:
     #   - ./cache:/app/cache
-    ports:
-      - 3200:3030
-    restart: no
+    # ports:
+    #   - 3200:3030

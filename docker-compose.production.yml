@@ -1,0 +1,10 @@
+services:
+  api:
+    restart: on-failure
+    networks:
+      - ext_net
+
+networks:
+  ext_net:
+    name: ragna_network
+    external: true
