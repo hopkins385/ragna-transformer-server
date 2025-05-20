@@ -1,6 +1,7 @@
 services:
   api:
     restart: on-failure
+    cpus: 2
     networks:
       - ext_net
 
