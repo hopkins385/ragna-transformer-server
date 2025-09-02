@@ -1,4 +1,4 @@
-# Ragna Transformer Server
+# RAGNA Studio - NER Server
 
 A FastAPI-based Named Entity Recognition (NER) service powered by GLiNER, designed to extract and mask sensitive information from text.
 
@@ -182,7 +182,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [GLiNER](https://github.com/urchade/GLiNER) for the excellent NER model
 - [FastAPI](https://fastapi.tiangolo.com/) for the web framework
-- [Ragna](https://ragna.chat/) ecosystem
 
 ## Support
 
@@ -192,4 +191,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Note**: This server is designed to work as part of the Ragna ecosystem but can be used independently for any NER tasks.
+**Note**: This server is designed to work as part of the RAGNA Studio ecosystem but can be used independently for any NER tasks.
