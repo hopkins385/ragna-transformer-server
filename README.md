@@ -13,13 +13,6 @@ A FastAPI-based Named Entity Recognition (NER) service powered by GLiNER, design
 
 ## Quick Start
 
-### Using Docker (Recommended)
-
-```bash
-# Pull and run the latest image
-docker run -p 3030:3030 ghcr.io/hopkins385/ragna-transformer-server:latest
-```
-
 ### Local Development
 
 1. **Prerequisites**
@@ -172,7 +165,7 @@ This service uses the [GLiNER multi-v2.1](https://huggingface.co/urchade/gliner_
 - **Size**: ~500MB
 - **Languages**: Multilingual support
 - **Performance**: State-of-the-art NER accuracy
-- **License**: MIT
+- **License**: Apache 2.0
 
 ## License
 
