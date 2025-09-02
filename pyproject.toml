@@ -1,7 +1,7 @@
 [project]
 name = "ragna-transformer-server"
 version = "0.1.0"
-description = "Add your description here"
+description = "A FastAPI-based Named Entity Recognition (NER) service powered by GLiNER for extracting and masking sensitive information from text"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -9,3 +9,11 @@ dependencies = [
     "gliner>=0.2.17",
     "uvicorn>=0.34.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/hopkins385/ragna-transformer-server"
+Repository = "https://github.com/hopkins385/ragna-transformer-server.git"
+Issues = "https://github.com/hopkins385/ragna-transformer-server/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0", "pytest-asyncio>=0.21.0", "httpx>=0.24.0"]
